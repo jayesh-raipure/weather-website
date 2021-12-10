@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault()
     paragraphOne.textContent="Loading..."
     paragraphTwo.textContent=""
-    fetch("http://localhost:3000/weather?address="+search.value).then((response) => {
+    fetch("/weather?address="+search.value).then((response) => {
     response.json().then((data) => {
         paragraphOne.textContent=""
         if(data.error){
