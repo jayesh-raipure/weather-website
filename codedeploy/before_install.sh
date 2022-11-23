@@ -1,0 +1,1 @@
+mkdir -p /home/ubuntu/before_install

@@ -1,0 +1,1 @@
+mkdir -p /home/ubuntu/after_install

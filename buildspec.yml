@@ -1,0 +1,15 @@
+@@ -0,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "Copying files to S3"
+  pre_build:
+    commands:
+      - echo "pre build"
+  build:
+    commands:
+      - echo "build phase"
+artifacts:
+  files:
+  - '**/*'

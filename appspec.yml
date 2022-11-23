@@ -1,0 +1,31 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/weather-website
+    overwrite: true
+permissions:
+  - object: /home/ubuntu/weather-website/codedeploy
+    pattern: "*.sh"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
+    type:
+      - file
+hooks:
+  BeforeInstall:
+    - location: codedeploy/before_install.sh
+      timeout: 180
+      runas: ubuntu
+  AfterInstall:
+    - location: codedeploy/after_install.sh
+      timeout: 360
+      runas: ubuntu
+  ApplicationStart:
+    - location: codedeploy/app_start.sh
+      timeout: 720
+      runas: ubuntu
+  ApplicationStop:
+    - location: codedeploy/app_stop.sh
+      timeout: 180
+      runas: ubuntu
